@@ -1,6 +1,6 @@
 <template>
   <div>
-<v-card>
+<v-card v-ripple>
   <v-container fluid>
     <v-card-title>
       <h3>{{title}}</h3>

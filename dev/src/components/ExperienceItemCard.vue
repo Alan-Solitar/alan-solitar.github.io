@@ -1,6 +1,9 @@
 <template>
   <div>
     <general-card :title="title">
+    <template slot="meta">
+      <slot name="metaData"> </slot>
+    </template>
     <template slot="content">
       <responsibilities :items="items"/>
     </template>
@@ -12,9 +15,18 @@
 import GeneralCard from './GeneralCard'
 import Responsibilities from './Responsibilities'
 
-  export default {
-    components:{GeneralCard,Responsibilities}
-  }
+export default {
+  name: 'ExperienceItemCard',
+  props: {
+    items: {
+      type: Array
+    },
+    title: {
+      type: String
+    }
+  },
+  components: {GeneralCard, Responsibilities}
+}
 </script>
 
 <style scoped>
